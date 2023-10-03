@@ -18,6 +18,10 @@ class Elevator {
         return $this->currentFloor;
     }
 
+    public function getPassengers() {
+        return $this->passengers;
+    }
+
     public function loadPassenger($floor, $targetFloor) {
         if (count($this->passengers) < 5) {
             $this->passengers[] = ["floor" => $floor, "targetFloor" => $targetFloor];

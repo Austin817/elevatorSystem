@@ -2,7 +2,7 @@
 
 物件（類別）:
 
-1. `Building` 類：表示整棟大樓，負責管理多部電梯，處理乘客請求，模擬電梯和乘客的運作。
+1. `Building` 類別：表示整棟大樓，負責管理多部電梯，處理乘客請求，模擬電梯和乘客的運作。
 
 2. `Elevator` 類別：表示電梯，負責管理單一電梯的狀態和行為，包括目前樓層、乘客清單、運行方向等。
 
@@ -11,15 +11,16 @@
 
 函數：
 
-在 `Building` 類別中定義了以下方法（函數）：
+A.在 `Building` 類別中定義了以下方法（函數）：
 
-1. `__construct($numElevators, $numFloors)`：建構函數，用於建立 `Building` 對象，並初始化指定數量的電梯。
+1. `__construct($numElevators, $numFloors)`：建構函數，用於建立 `Building` 對象，並初始化指定數量的電梯、樓層。
 
 2. `requestElevator($floor, $targetFloor)`：處理乘客的請求，選擇最近的電梯，並將乘客的目標樓層和起始樓層資訊傳遞給電梯。
 
 3. `simulate($numPassengers)`：模擬電梯和乘客的運行，包括產生隨機的乘客請求和模擬電梯的移動和乘客的卸載。
 
-在 `Elevator` 類別中定義了以下方法（函數）：
+
+B.在 `Elevator` 類別中定義了以下方法（函數）：
 
 1. `__construct()`：建構函數，用於建立 `Elevator` 對象，並初始化電梯的初始狀態。
 

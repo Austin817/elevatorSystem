@@ -30,7 +30,7 @@ class Building {
 
         $closestElevator->loadPassenger($floor, $targetFloor);
 
-        // Set the elevator's direction based on the destination floor
+        // 依目的樓層設置電梯方向
         if ($targetFloor > $floor) {
             $closestElevator->setDirection(1);
         } elseif ($targetFloor < $floor) {
@@ -46,7 +46,7 @@ class Building {
             $targetFloor = rand(1, $this->floors);
 
             $elevator = $this->requestElevator($floor, $targetFloor);
-            echo "Passenger on floor $floor pressed the elevator button to go to floor $targetFloor.\n";
+            echo "乘客在 $floor 樓，按下電梯到 $targetFloor 樓.\n";
             // Log::info("Passenger on floor $floor pressed the elevator button to go to floor $targetFloor.");
         }
 
@@ -56,10 +56,10 @@ class Building {
                 $elevator->move();
 
                 // 取得電梯狀態和乘客狀態
-                // $currentFloor = $elevator->getCurrentFloor();
-                // $passengerCount = count($elevator->getPassengers());
+                $currentFloor = $elevator->getCurrentFloor();
+                $passengerCount = count($elevator->getPassengers());
 
-                // echo "Elevator on floor $currentFloor with $passengerCount passengers.\n";
+                echo "電梯在 $currentFloor 樓， 有 $passengerCount 個乘客.\n";
                 // Log::info("Elevator on floor $currentFloor with $passengerCount passengers.");
             }
         }
