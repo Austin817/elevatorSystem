@@ -14,9 +14,9 @@ class ElevatorController extends Controller
 
         // 輸入電梯數、樓層數
         $building = new Building(2, 10);
-        $building->simulate(2);
+        $building->simulate(1);
         
         
-        return '電梯系統已經開始模擬';
+        return '電梯系統已經完成模擬';
     }
 }

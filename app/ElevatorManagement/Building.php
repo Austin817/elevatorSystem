@@ -11,8 +11,8 @@ class Building {
         $this->elevators = [];
         $this->floors = $numFloors;
 
-        for ($i = 0; $i < $numElevators; $i++) {
-            $this->elevators[] = new Elevator();
+        for ($i = 1; $i <= $numElevators; $i++) {
+            $this->elevators[] = new Elevator($i);
         }
     }
 
@@ -56,10 +56,11 @@ class Building {
                 $elevator->move();
 
                 // 取得電梯狀態和乘客狀態
+                $elevatorNumber = $elevator->getElevatorNumber();
                 $currentFloor = $elevator->getCurrentFloor();
                 $passengerCount = count($elevator->getPassengers());
 
-                echo "電梯在 $currentFloor 樓， 有 $passengerCount 個乘客.\n";
+                echo "$elevatorNumber 號電梯在 $currentFloor 樓 - 有 $passengerCount 個乘客 ， \n";
                 // Log::info("Elevator on floor $currentFloor with $passengerCount passengers.");
             }
         }
